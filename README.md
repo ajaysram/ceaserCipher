@@ -23,12 +23,15 @@ And even exams contain questions based on ceaser cipher.Some **Capture the Flag*
 * Run python3 ceaser.py
 ## Usage
 ```
-usage: ceaser.py [-h] -t TEXT [-e] [-s SHIFT]
+usage: ceaser.py [-h] -t TEXT [-e] -s SHIFT [-o FILENAME]
 
 optional arguments:
   -h, --help            show this help message and exit
-  -t TEXT, --text TEXT  text to encode/decode
+  -t TEXT, --text TEXT  text to encode/decode inside quotation i.e 'TEXT'
   -e, --encode          encode the text
-  -s SHIFT, --shift SHIFT position to shift
+  -s SHIFT, --shift SHIFT
+                        position to shift
+  -o FILENAME, --filename FILENAME
+                        save decode text to a file
 
 ```
