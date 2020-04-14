@@ -21,8 +21,8 @@ And even exams contain questions based on ceaser cipher.Some **Capture the Flag*
 ## How to use this script
 * Download the file as zip or you can use git clone to get the script
 * Run python3 ceaser.py
-## Useage
-```python3
+## Usage
+```
 usage: ceaser.py [-h] -t TEXT [-e] [-s SHIFT]
 
 optional arguments:
