@@ -6,6 +6,8 @@ import argparse
 
 decodeFlag = False
 decodeShift = 0
+inputText = ''
+decodedList = []
 
 LETTERS = {letter: str(index) for index, letter in enumerate(ascii_letters, start=1)} 
 
@@ -20,7 +22,6 @@ def getalphabet(val):
 
 def encode(message,shift):
     new = []
-    # print("INPUT          :",message)
     if int(shift) < 0 :
         shift = 26 + int(shift)    
     for letter in message:
@@ -38,6 +39,7 @@ def encode(message,shift):
 def correction(input,code):
     global decodeShift
     global decodeFlag
+    global inputText
     for i in range(len(input)):
         if input[i].isupper():
             code[i]=code[i].upper()
@@ -45,11 +47,11 @@ def correction(input,code):
             code[i]=code[i].lower()
     code =''.join(code)
     input=''.join(input)
+    inputText =input
+    decodedList.append(code)
     if decodeFlag == True:
-        print(decodeShift,'\t\t\t',code)
         decodeShift+=1
-    else:
-        print("BEFORE ENCODING :",input,"\nAFTER ENCODING  :",code)     
+      
            
 
 def decode(message):
@@ -65,18 +67,24 @@ def Main():
 
     args = parser.parse_args(args=None if sys.argv[1:] else ['--help'])
 
+    global decodeFlag
+
     if args.encode:
+        decodeFlag = False
         encode(args.text,args.shift)
     
     if args.decode:  
-        print("shift\t\t\toutput\t\t\t\n")    
-        global decodeFlag
         decodeFlag = True  
         decode(args.text)
     
-    if args.shift == False and decodeFlag == False:
-        print("No shift is given,swtching to default value of 0")
-
 
 if __name__ == "__main__":
     Main()
+    if(len(decodedList)>1):
+        decodedList = decodedList[1:27]
+        print("DECODING ......\n")
+        print("SHIFT\tVALUE\n")
+        for i in range(26):
+            print(i,"\t",decodedList[i])
+    else:
+        print("BEFORE ENCODING :",inputText,"\nAFTER ENCODING  :",decodedList[0])
