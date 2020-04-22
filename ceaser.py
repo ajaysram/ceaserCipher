@@ -62,7 +62,7 @@ def Main():
     parser = argparse.ArgumentParser()
     parser.add_argument("-t","--text",help="text to encode/decode inside quotation i.e 'TEXT'",required=True)
     parser.add_argument("-e","--encode",help="encode the text",action="store_true",default=True)
-    parser.add_argument("-s","--shift",help="position to shift",type=int,default=0)
+    parser.add_argument("-s","--shift",help="position to shift",type=int,default=1)
     parser.add_argument("-d","--decode",help="Bruteforce",action="store_true")
 
     args = parser.parse_args(args=None if sys.argv[1:] else ['--help'])

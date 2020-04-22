@@ -23,7 +23,7 @@ And even exams contain questions based on ceaser cipher.Some **Capture the Flag*
 * Run python3 ceaser.py
 ## Usage
 ```
-usage: ceaser.py [-h] -t TEXT [-e] -s SHIFT [-o FILENAME]
+usage: ceaser.py [-h] -t TEXT [-e] [-s SHIFT] [-d]
 
 optional arguments:
   -h, --help            show this help message and exit
@@ -31,7 +31,9 @@ optional arguments:
   -e, --encode          encode the text
   -s SHIFT, --shift SHIFT
                         position to shift
-  -o FILENAME, --filename FILENAME
-                        save decode text to a file
+  -d, --decode          Bruteforce
 
+```
+```
+Note: Default value for encoding is set to 1 , i.e if no argument is passed for shift value, 1 will be automatically assigned.
 ```
